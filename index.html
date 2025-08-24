@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Sarta's Portfolio</title>
+        <!-- Light mode favicon -->
+                      <link rel="icon" href="assets/favicon-black.svg" media="(prefers-color-scheme: light)">
+
+        <!-- Dark mode favicon -->
+                      <link rel="icon" href="assets/favicon-white.svg" media="(prefers-color-scheme: dark)">
+
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        
+        
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+          <!-- Core theme CSS (includes Bootstrap)-->
+                  <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+  <div class="container px-4 px-lg-5">
+              <a class="navbar-brand d-flex align-items-center" href="#page-top">
+            <i class="bi bi-vector-pen me-2 logo-icon"></i> Sarta’s Portfolio
+              </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <!-- menu utama -->
+      <ul class="navbar-nav ms-auto my-2 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+          <ul class="dropdown-menu" aria-labelledby="portfolioDropdown">
+            <li><a class="dropdown-item" href="#logo">Logo Design</a></li>
+            <li><a class="dropdown-item" href="#packaging">Packaging Design</a></li>
+            <li><a class="dropdown-item" href="#web">Web Design</a></li>
+            <li><a class="dropdown-item" href="#print">Print Design</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- tombol Upwork -->
+      <a class="btn hire-btn ms-lg-3"
+         href="https://www.upwork.com/freelancers/~019ee130845ce15e7d?mp_source=share" target="_blank">
+        Hire me on Upwork
+      </a>
+
+      <!-- toggle dark mode -->
+      <div class="theme-toggle d-flex align-items-center ms-3">
+        <span id="themeLabel" class="me-2 small">Dark Mode</span>
+        <label class="theme-switch mb-0">
+          <input type="checkbox" id="themeToggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</nav>
+
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+
+                        <!-- teks mengetik-->
+                        <h1 class="text-white font-weight-bold">
+                                  <span id="typed-text"></span>
+                                </h1>
+
+                                <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                  const textArray = ["Hi, my name is Sarta", "Welcome to my Portfolio"];
+                                  const typingDelay = 80;
+                                  const erasingDelay = 40;
+                                  const newTextDelay = 1000;
+                                  let textArrayIndex = 0;
+                                  let charIndex = 0;
+                                  const typedText = document.getElementById("typed-text");
+
+                                  function type() {
+                                    if (charIndex < textArray[textArrayIndex].length) {
+                                      typedText.textContent += textArray[textArrayIndex].charAt(charIndex);
+                                      charIndex++;
+                                      setTimeout(type, typingDelay);
+                                    } else {
+                                      // hanya hapus jika masih ada string berikutnya
+                                      if (textArrayIndex < textArray.length - 1) {
+                                        setTimeout(erase, newTextDelay);
+                                      }
+                                    }
+                                  }
+
+                                  function erase() {
+                                    if (charIndex > 0) {
+                                      typedText.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                                      charIndex--;
+                                      setTimeout(erase, erasingDelay);
+                                    } else {
+                                      textArrayIndex++;
+                                      setTimeout(type, typingDelay + 500);
+                                    }
+                                  }
+
+                                  if (textArray.length) setTimeout(type, newTextDelay);
+                                });
+
+                                </script>
+
+
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <h2 class="text-white mt-0">“Turning Ideas Into Impactful Visuals”</h2>
+                        <p class="text-white-75 mb-5">I help businesses stand out with professional logo, packaging, web, and print designs that connect with their audience.</p>
+                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+<section class="page-section bg-primary" class="page-section bg-orange-gradient" id="about">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 align-items-center">
+      
+      <!-- Kolom Kiri: Teks + Tools -->
+      <div class="col-lg-6">
+        <div class="text-center text-lg-start">
+          <h2 class="text-white mt-0">I’ve got what you need.</h2>
+          <hr class="divider divider-light" />
+          <p class="text-white-75 mb-4">
+            With years of experience delivering high-quality designs for global clients, 
+            I combine creativity with strategic thinking. My goal is not just to make your 
+            brand look good, but to make it unforgettable. Whether you need a brand identity, 
+            packaging that sells, or a website that converts — I’ll deliver results you can trust.
+          </p>
+
+          <!-- Tools -->
+          <h3 class="text-white mt-4 text-center text-lg-start">The Tools I Use</h3>
+                <hr class="divider divider-light" />
+
+                <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-4 mt-3">
+                  <div class="tool-item text-center">
+                    <img src="assets/img/tools/icon_illustrator.png" alt="Adobe Illustrator">
+                    <p class="text-white-75 small mt-2">Adobe Illustrator</p>
+                  </div>
+                  <div class="tool-item text-center">
+                    <img src="assets/img/tools/icon_photoshop.png" alt="Adobe Photoshop">
+                    <p class="text-white-75 small mt-2">Adobe Photoshop</p>
+                  </div>
+                  <div class="tool-item text-center">
+                    <img src="assets/img/tools/icon_indesign.png" alt="Adobe InDesign">
+                    <p class="text-white-75 small mt-2">Adobe InDesign</p>
+                  </div>
+                  <div class="tool-item text-center">
+                    <img src="assets/img/tools/icon_inkscape.png" alt="Inkscape">
+                    <p class="text-white-75 small mt-2">Inkscape</p>
+                  </div>
+                  <div class="tool-item text-center">
+                    <img src="assets/img/tools/icon_affinity.png" alt="Affinity Designer">
+                    <p class="text-white-75 small mt-2">Affinity Designer</p>
+                  </div>
+                  <div class="tool-item text-center">
+                    <img src="assets/img/tools/icon_elementor.png" alt="Elementor">
+                    <p class="text-white-75 small mt-2">Elementor</p>
+                  </div>
+                  <div class="tool-item text-center">
+                    <img src="assets/img/tools/icon_figma.png" alt="Figma">
+                    <p class="text-white-75 small mt-2">Figma</p>
+                  </div>
+                  <div class="tool-item text-center">
+                    <img src="assets/img/tools/icon_xd.png" alt="Adobe XD">
+                    <p class="text-white-75 small mt-2">Adobe XD</p>
+                  </div>
+                </div>
+
+
+          <a class="btn custom-btn btn-xl mt-4" href="#services">Get Started!</a>
+
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Foto -->
+      <div class="col-lg-6 text-center mt-5 mt-lg-0">
+        <img src="assets/img/profile.webp" alt="My Photo" class="img-fluid profile-img" />
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+                        <!-- Stats Section -->
+                        <section class="page-section bg-light" id="stats">
+                          <div class="container px-4 px-lg-5 text-center">
+                            <div class="row gx-4 gx-lg-5">
+                              
+                              <!-- Clients -->
+                              <div class="col-md-4 mb-4">
+                                <div class="counter-box">
+                                  <div class="counter" data-target="212">0</div>
+                                  <h4>Happy Clients</h4>
+                                </div>
+                              </div>
+
+                              <!-- Projects -->
+                              <div class="col-md-4 mb-4">
+                                <div class="counter-box">
+                                  <div class="counter" data-target="446">0</div>
+                                  <h4>Successful Projects</h4>
+                                </div>
+                              </div>
+
+                              <!-- Hours -->
+                              <div class="col-md-4 mb-4">
+                                <div class="counter-box">
+                                  <div class="counter" data-target="10367">0</div>
+                                  <h4>Hours of Experience</h4>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </section>
+
+
+
+
+        <!-- Services icon-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">My Services</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2"><a href="#logo">Logo Design</a></h3>
+                            <p class="text-muted mb-0">Unique and memorable logos crafted to capture your brand’s identity and leave a lasting impression.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-box-seam fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2"><a href="#packaging">Packaging Design</a></h3>
+                            <p class="text-muted mb-0">Eye-catching and functional packaging that elevates your product and attracts customers at first sight.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2"><a href="#web">Web Design</a></h3>
+                            <p class="text-muted mb-0">Modern, responsive websites designed to engage visitors and turn them into loyal customers.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-printer fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2"><a href="#print">Print Design</a></h3>
+                            <p class="text-muted mb-0">High-quality print materials from brochures to business cards that communicate your message with style and clarity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- Portfolio Sections -->
+
+<!-- Logo Design -->
+<section class="page-section bg-light" id="logo">
+  <div class="container">
+    <h2 class="text-center mt-0">Logo Designs</h2>
+    <hr class="divider my-4" />
+    <div class="row g-4">
+                  <!-- Thumbnail -->
+                                  <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/1full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="Logo 1" />
+                                    </a>
+                                  </div>
+                                  <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/2full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="Logo 2" />
+                                    </a>
+                                  </div>
+                                  <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/3full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="Logo 3" />
+                                    </a>
+                                  </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/1full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="Logo 1" />
+                                    </a>
+                                  </div>
+                                  <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/2full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="Logo 2" />
+                                    </a>
+                                  </div>
+                                  <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/3full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="Logo 3" />
+                                    </a>
+                                  </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/1full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="Logo 1" />
+                                    </a>
+                                  </div>
+                                  <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/2full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="Logo 2" />
+                                    </a>
+                                  </div>
+                                  <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/3full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="Logo 3" />
+                                    </a>
+                                  </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/1full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="Logo 1" />
+                                    </a>
+                                  </div>
+                                  <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/2full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="Logo 2" />
+                                    </a>
+                                  </div>
+                                  <div class="col-lg-4 col-sm-6">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                       data-img="assets/img/portfolio/fullsize/3full.jpg">
+                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="Logo 3" />
+                                    </a>
+                                  </div>
+    </div>
+  </div>
+</section>
+
+<!-- Packaging Design -->
+<section class="page-section" id="packaging">
+  <div class="container">
+    <h2 class="text-center mt-0">Packaging Designs</h2>
+    <hr class="divider my-4" />
+    <div class="row g-4">
+                                          <div class="col-lg-4 col-sm-6">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                               data-img="assets/img/portfolio/fullsize/4.jpg">
+                                              <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="Packaging 1" />
+                                            </a>
+                                          </div>
+                                          <div class="col-lg-4 col-sm-6">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                               data-img="assets/img/portfolio/fullsize/5.jpg">
+                                              <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="Packaging 2" />
+                                            </a>
+                                          </div>
+                                          <div class="col-lg-4 col-sm-6">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                               data-img="assets/img/portfolio/fullsize/6.jpg">
+                                              <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="Packaging 3" />
+                                            </a>
+                                          </div>
+                                                <div class="col-lg-4 col-sm-6">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                               data-img="assets/img/portfolio/fullsize/4.jpg">
+                                              <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="Packaging 1" />
+                                            </a>
+                                          </div>
+                                          <div class="col-lg-4 col-sm-6">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                               data-img="assets/img/portfolio/fullsize/5.jpg">
+                                              <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="Packaging 2" />
+                                            </a>
+                                          </div>
+                                          <div class="col-lg-4 col-sm-6">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                               data-img="assets/img/portfolio/fullsize/6.jpg">
+                                              <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="Packaging 3" />
+                                            </a>
+                                          </div>
+                                                <div class="col-lg-4 col-sm-6">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                               data-img="assets/img/portfolio/fullsize/4.jpg">
+                                              <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="Packaging 1" />
+                                            </a>
+                                          </div>
+                                          <div class="col-lg-4 col-sm-6">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                               data-img="assets/img/portfolio/fullsize/5.jpg">
+                                              <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="Packaging 2" />
+                                            </a>
+                                          </div>
+                                          <div class="col-lg-4 col-sm-6">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                               data-img="assets/img/portfolio/fullsize/6.jpg">
+                                              <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="Packaging 3" />
+                                            </a>
+                                          </div>
+    </div>
+  </div>
+</section>
+
+<!-- Web Design -->
+<section class="page-section" id="web">
+  <div class="container">
+    <h2 class="text-center mt-0">Web Designs</h2>
+    <hr class="divider my-4" />
+    <div class="row g-4">
+                                            <div class="col-lg-4 col-sm-6">
+                                              <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                 data-img="assets/img/portfolio/fullsize/1.jpg">
+                                                <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="Web 1" />
+                                              </a>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                              <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                 data-img="assets/img/portfolio/fullsize/2.jpg">
+                                                <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="Web 2" />
+                                              </a>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                              <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                 data-img="assets/img/portfolio/fullsize/3.jpg">
+                                                <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="Web 3" />
+                                              </a>
+                                            </div>
+                                                  <div class="col-lg-4 col-sm-6">
+                                              <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                 data-img="assets/img/portfolio/fullsize/1.jpg">
+                                                <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="Web 1" />
+                                              </a>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                              <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                 data-img="assets/img/portfolio/fullsize/2.jpg">
+                                                <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="Web 2" />
+                                              </a>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                              <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                 data-img="assets/img/portfolio/fullsize/3.jpg">
+                                                <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="Web 3" />
+                                              </a>
+                                            </div>
+    </div>
+  </div>
+</section>
+
+<!-- Print Design -->
+<section class="page-section" id="print">
+  <div class="container">
+    <h2 class="text-center mt-0">Print Designs</h2>
+    <hr class="divider my-4" />
+    <div class="row g-4">
+                                                  <div class="col-lg-4 col-sm-6">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                       data-img="assets/img/portfolio/fullsize/4.jpg">
+                                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="Print 1" />
+                                                    </a>
+                                                  </div>
+                                                  <div class="col-lg-4 col-sm-6">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                       data-img="assets/img/portfolio/fullsize/5.jpg">
+                                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="Print 2" />
+                                                    </a>
+                                                  </div>
+                                                  <div class="col-lg-4 col-sm-6">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                       data-img="assets/img/portfolio/fullsize/6.jpg">
+                                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="Print 3" />
+                                                    </a>
+                                                  </div>
+                                                        <div class="col-lg-4 col-sm-6">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                       data-img="assets/img/portfolio/fullsize/4.jpg">
+                                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="Print 1" />
+                                                    </a>
+                                                  </div>
+                                                  <div class="col-lg-4 col-sm-6">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                       data-img="assets/img/portfolio/fullsize/5.jpg">
+                                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="Print 2" />
+                                                    </a>
+                                                  </div>
+                                                  <div class="col-lg-4 col-sm-6">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                                       data-img="assets/img/portfolio/fullsize/6.jpg">
+                                                      <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="Print 3" />
+                                                    </a>
+                                                  </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Universal Modal -->
+<div class="modal fade" id="portfolioModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content bg-dark">
+      <div class="modal-body text-center">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                data-bs-dismiss="modal" aria-label="Close"></button>
+        <img id="modalImage" class="img-fluid rounded" src="" alt="Portfolio fullsize">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Reviews section -->
+<section class="page-section bg-light" id="reviews">
+  <div class="container">
+    <h2 class="text-center mt-0">What Clients Say</h2>
+    <hr class="divider my-4" />
+    <div class="row">
+      <!-- Review 1 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <img class="rounded-circle mb-3" src="assets/img/client_davinder.webp" alt="Client 1" width="80" height="80">
+            <h5 class="card-title mb-0">Davinder Raju</h5>
+            <p class="text-muted small">Founder of <br>Greener Dentistry Global</p>
+                                    <!-- ⭐⭐⭐⭐⭐ Rating bintang -->
+                          <div class="mb-2 text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+            <p class="card-text">"I have no hesitation endorsing Sarta. He created attractive visuals for my website, which draw praise from visitors. He is very accommodating and does his utmost to understand your needs, and he often provided me with more options than I requested to ensure that we explored all options."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <img class="rounded-circle mb-3" src="assets/img/client_sam.webp" alt="Client 2" width="80" height="80">
+            <h5 class="card-title mb-0">Sam Clough</h5>
+            <p class="text-muted small">Social Media Manager at <br>AutoForm Engineering GmbH</p>
+                                <!-- ⭐⭐⭐⭐⭐ Rating bintang -->
+                      <div class="mb-2 text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                      </div>
+               <p class="card-text">"Sarta is both a great colleague and a good friend. He’s been helping our company with graphic design and data entry tasks. He’s very flexible and efficient, and even on my personal projects, he’s delivered excellent results. Truly impressive!"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <img class="rounded-circle mb-3" src="assets/img/client_vinay.webp" alt="Client 3" width="80" height="80">
+            <h5 class="card-title mb-0">Vinay Wangnoo</h5>
+            <p class="text-muted small">Founder of <br>Get London Transfer</p>
+                                  <!-- ⭐⭐⭐⭐⭐ Rating bintang -->
+                        <div class="mb-2 text-warning">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                        </div>
+            <p class="card-text">"There’s no doubt, Sarta is patient, skilled, and highly competent. He supported my company with promotional design work and website UI, and also helped improve my site’s overall look, making it SEO-friendly and faster to load."</p>
+          </div>
+        </div>
+      </div>
+      <!-- Review 4 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <img class="rounded-circle mb-3" src="assets/img/client_chris.webp" alt="Client 1" width="80" height="80">
+            <h5 class="card-title mb-0">Cristian DeOliveira</h5>
+            <p class="text-muted small">Founder of <br>Almighty Insurance</p>
+                              <!-- ⭐⭐⭐⭐⭐ Rating bintang -->
+                    <div class="mb-2 text-warning">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+            <p class="card-text">"I’ve relied on Sarta for a long time for anything related to graphic design, whether it’s logos, social media posts, or even logo animations. I’ve never been disappointed. He always manages to understand exactly what the client wants."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <img class="rounded-circle mb-3" src="assets/img/client_matt.webp" alt="Client 2" width="80" height="80">
+            <h5 class="card-title mb-0">Mattew Knobel</h5>
+            <p class="text-muted small">CEO and Co-Owner at <br>What's Your Treat</p>
+                                  <!-- ⭐⭐⭐⭐⭐ Rating bintang -->
+                        <div class="mb-2 text-warning">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                        </div>
+            <p class="card-text">"Sarta helped me design packaging for my CBD products. The designs were powerful, impactful, and the revision process was smooth, efficient, and precise. Highly recommended!"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <img class="rounded-circle mb-3" src="assets/img/client_mj.webp" alt="Client 3" width="80" height="80">
+            <h5 class="card-title mb-0">Matthew J. Martin</h5>
+            <p class="text-muted small">Founder of <br>Martin Van Java Menswear</p>
+                            <!-- ⭐⭐⭐⭐⭐ Rating bintang -->
+                  <div class="mb-2 text-warning">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+            <p class="card-text">"I first met Sarta through Upwork, where I trusted him to design a logo for my Menswear brand. The results went beyond my expectations. He always provided multiple concept options during the process, ensuring I could confidently choose the best one."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+       
+      <!-- Social Media Section -->
+<section class="page-section bg-dark text-white">
+  <div class="container px-4 px-lg-5 text-center">
+    <h3 class="mb-4">Stay Connected</h3>
+    <hr class="divider custom-divider mb-5" />
+
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+      <a href="https://web.facebook.com/s4rt4" target="_blank" class="text-white text-decoration-none social-link">
+        <i class="fab fa-facebook fa-2x"></i>
+        <p class="mt-2 small">Facebook</p>
+      </a>
+      <a href="https://www.instagram.com/s4rt4/" target="_blank" class="text-white text-decoration-none social-link">
+        <i class="fab fa-instagram fa-2x"></i>
+        <p class="mt-2 small">Instagram</p>
+      </a>
+      <a href="https://www.linkedin.com/in/sarta/" target="_blank" class="text-white text-decoration-none social-link">
+        <i class="fab fa-linkedin fa-2x"></i>
+        <p class="mt-2 small">LinkedIn</p>
+      </a>
+      <a href="https://id.pinterest.com/sarta_design/" target="_blank" class="text-white text-decoration-none social-link">
+        <i class="fab fa-pinterest fa-2x"></i>
+        <p class="mt-2 small">Pinterest</p>
+      </a>
+      <a href="https://dribbble.com/S4rt4" target="_blank" class="text-white text-decoration-none social-link">
+        <i class="fab fa-dribbble fa-2x"></i>
+        <p class="mt-2 small">Dribbble</p>
+      </a>
+      <a href="https://www.behance.net/sarta" target="_blank" class="text-white text-decoration-none social-link">
+        <i class="fab fa-behance fa-2x"></i>
+        <p class="mt-2 small">Behance</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+        <!-- Contact-->
+ 
+
+<section class="page-section" id="contact">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-lg-8 col-xl-6 text-center">
+        <h2 class="mt-0">Let's Get In Touch!</h2>
+        <hr class="divider" />
+        <p class="text-muted mb-5">
+          Ready to start your next project with me? Send me a message and I will get back to you as soon as possible!
+        </p>
+      </div>
+    </div>
+    <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+      <div class="col-lg-6">
+        <!-- ✅ Formspree integration -->
+        <form action="https://formspree.io/f/xpwlejyl" method="POST">
+                          <!-- Hidden subject -->
+                          <input type="hidden" name="_subject" value="New message from Portfolio Contact Form!">
+                          
+                          <!-- Redirect ke halaman custom -->
+                          <input type="hidden" name="_redirect" value="http://localhost/startbootstrap/thankyou.html">
+
+                          <!-- Name input-->
+                          <div class="form-floating mb-3">
+                            <input class="form-control" id="name" type="text" name="name" placeholder="Enter your name..." required />
+                            <label for="name">Full name</label>
+                          </div>
+
+                          <!-- Email address input-->
+                          <div class="form-floating mb-3">
+                            <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" required />
+                            <label for="email">Email address</label>
+                          </div>
+
+                          <!-- Phone number input-->
+                          <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" type="tel" name="phone" placeholder="(123) 456-7890" />
+                            <label for="phone">Phone number</label>
+                          </div>
+
+                          <!-- Message input-->
+                          <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
+                            <label for="message">Message</label>
+                          </div>
+
+                          <!-- Submit Button-->
+                          <div class="d-grid">
+                            <button class="btn btn-primary btn-xl" type="submit">Send</button>
+                          </div>
+            </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">“Design is where silence speaks in colors, and ideas take shape in lines.”</div></div>
+        </footer>
+      
+        
+       <!-- Scroll to Top Button-->
+<button type="button" class="btn btn-primary btn-lg rounded-circle" id="btn-back-to-top">
+  ↑
+</button>
+
+<script>
+  const mybutton = document.getElementById("btn-back-to-top");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  };
+
+  mybutton.addEventListener("click", function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+
+</button>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Footer -->
+<footer class="footer bg-dark text-white py-4">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <a class="text-white mx-3" href="#about">About Me</a>
+        <a class="text-white mx-3" href="#services">Services</a>
+        <a class="text-white mx-3" href="#portfolio">Portfolio</a>
+        <a class="text-white mx-3" href="#reviews">Reviews</a>
+        <a class="text-white mx-3" href="#contact">Contact</a>
+      </div>
+      <div class="col-md-12">
+        <small>&copy; 2025 Startbootstrap theme modified by me.</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const portfolioModal = document.getElementById('portfolioModal');
+  const modalImage = document.getElementById('modalImage');
+
+  portfolioModal.addEventListener('show.bs.modal', event => {
+    const trigger = event.relatedTarget;
+    const imgSrc = trigger.getAttribute('data-img');
+    modalImage.src = imgSrc;
+  });
+</script>
+
+            <!-- Bootstrap Bundle dengan Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Script custom -->
+            <script src="js/scripts.js"></script>
+
+
+    </body>
+</html>
