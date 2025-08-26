@@ -757,43 +757,47 @@
     </div>
     <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
       <div class="col-lg-6">
-        <!-- ✅ Formspree integration -->
-        <form action="https://formspree.io/f/xpwlejyl" method="POST">
-                          <!-- Hidden subject -->
-                          <input type="hidden" name="_subject" value="New message from Portfolio Contact Form!">
-                          
+                                <!-- ✅ Web3Forms integration -->
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                        
+                          <!-- Access Key -->
+                          <input type="hidden" name="access_key" value="e81d7ead-072b-4d18-8056-45fef6381617">
+                        
                           <!-- Redirect ke halaman custom -->
-                          <input type="hidden" name="_redirect" value="https://s4rt4.github.io/sarta_portfolio_static/thankyou.html">
-
+                          <input type="hidden" name="redirect" value="https://sarta.click/thankyou.html">
+                        
+                          <!-- Hidden subject (opsional, buat judul email biar rapih) -->
+                          <input type="hidden" name="subject" value="Pesan Baru dari sarta.click pada {{date}}">
+                        
                           <!-- Name input-->
                           <div class="form-floating mb-3">
                             <input class="form-control" id="name" type="text" name="name" placeholder="Enter your name..." required />
                             <label for="name">Full name</label>
                           </div>
-
+                        
                           <!-- Email address input-->
                           <div class="form-floating mb-3">
                             <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" required />
                             <label for="email">Email address</label>
                           </div>
-
+                        
                           <!-- Phone number input-->
                           <div class="form-floating mb-3">
                             <input class="form-control" id="phone" type="tel" name="phone" placeholder="(123) 456-7890" />
                             <label for="phone">Phone number</label>
                           </div>
-
+                        
                           <!-- Message input-->
                           <div class="form-floating mb-3">
                             <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
                             <label for="message">Message</label>
                           </div>
-
+                        
                           <!-- Submit Button-->
                           <div class="d-grid">
                             <button class="btn btn-primary btn-xl" type="submit">Send</button>
                           </div>
-            </form>
+                        </form>
 
       </div>
     </div>
