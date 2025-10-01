@@ -12401,3 +12401,36 @@ body.dark-mode #stats .counter {
 body.dark-mode #stats h4 {
   color: #ddd;
 }
+
+/* ==========================
+   Flag Icons (Lipis) Integration Fixes
+   ========================== */
+
+/* Pastikan element bendera (yang sekarang SPAN) memiliki ukuran yang konsisten */
+.flag-icon {
+  display: inline-block;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  /* Aturan tinggi/lebar dipindahkan ke inline style di HTML (style="width: 20px; height: 15px;")
+     tapi kita pastikan dimensi minimumnya ada. */
+}
+
+/* Jika Anda masih menggunakan tag <img> untuk bendera (walaupun sudah diubah), pastikan mereka tidak merusak layout */
+.dropdown img {
+  width: auto;
+  height: auto;
+  min-width: 1em;
+}
+
+/* ======================================================================
+   Perbaikan Konsolidasi Modal Backdrop
+   (Hapus semua definisi .modal-backdrop yang lain dan gunakan ini)
+   ====================================================================== */
+.modal-backdrop,
+.modal-backdrop.show,
+.modal-backdrop.fade.show {
+  /* Hapus opacity Bootstrap dan gunakan alpha di background-color */
+  opacity: 1 !important; 
+  background-color: rgba(0, 0, 0, 0.3) !important; /* 30% transparan */
+}
