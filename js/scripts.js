@@ -1,4 +1,4 @@
-// scripts.js - KODE FINAL YANG SUDAH DIPERBAIKI (MEMPERBAIKI BENDERA UTAMA)
+// scripts.js - VERSI FINAL LENGKAP DENGAN FIX DROPDOWN UNTUK DESKTOP & MOBILE
 
 // -----------------------------
 // Global Variables
@@ -13,28 +13,24 @@ function startTypingEffect(el, text) {
 
   let charIndex = 0;
 
-  clearInterval(typingInterval); // Hentikan efek lama
+  clearInterval(typingInterval); 
 
   function tick() {
     if (charIndex < text.length) {
-      // Tambah karakter
       el.textContent = text.substring(0, ++charIndex);
-      // Panggil tick() lagi
-      typingInterval = setTimeout(tick, 120); // Kecepatan ketik: 120ms
+      typingInterval = setTimeout(tick, 120); 
     } else {
-      // Selesai mengetik
       clearInterval(typingInterval); 
     }
   }
 
-  tick(); // Mulai!
+  tick(); 
 }
 
 // -----------------------------
 // Language Switch & Theme Label Handler
 // -----------------------------
 const langOptions = {
-  // Hanya simpan kode negara (sesuai Flag Icons)
   "en-us": { flag: "us", label: "English (US)" }, 
   "en-gb": { flag: "gb", label: "English (UK)" },
   "id":    { flag: "id", label: "Bahasa Indonesia" },
@@ -43,21 +39,17 @@ const langOptions = {
   "pt":    { flag: "pt", label: "Português" },
   "nl":    { flag: "nl", label: "Nederlands" },
   "de":    { flag: "de", label: "Deutsch" },
-  "ar":    { flag: "sa", label: "العربية" }, // Menggunakan Arab Saudi
+  "ar":    { flag: "sa", label: "العربية" }, 
   "zh":    { flag: "cn", label: "中文" },
   "ja":    { flag: "jp", label: "日本語" },
-  "ko":    { flag: "kr", label: "한국어" } // Menggunakan Korea Selatan
+  "ko":    { flag: "kr", label: "한국어" } 
 };
 
-/**
- * Memperbarui label tema berdasarkan status mode saat ini.
- * @param {boolean} isDark - Status mode gelap saat ini.
- * @param {Object} data - Data terjemahan JSON yang sedang aktif.
- */
 function updateThemeLabel(isDark, data) {
     const label = document.getElementById("themeLabel");
     if (!label || !data) return;
     
+    // Mengambil kedua label (Dark dan Light) dari JSON
     const darkModeText = data["darkmode.label"] || "Dark Mode";
     const lightModeText = data["lightmode.label"] || "Light Mode";
 
@@ -74,15 +66,13 @@ function changeLang(lang) {
 
   const currentFlagEl = document.getElementById("currentFlag");
   
-  // 1. Update Bendera Utama (Memastikan Flag Icons Bekerja)
+  // 1. Update Bendera Utama
   if (currentFlagEl) {
-    // Hapus kelas flag-icon-xxx yang lama
     currentFlagEl.classList.forEach(className => {
       if (className.startsWith('flag-icon-')) {
         currentFlagEl.classList.remove(className);
       }
     });
-    // Tambahkan kelas flag-icon-yyy yang baru
     const countryCode = langOptions[lang].flag;
     currentFlagEl.classList.add(`flag-icon-${countryCode}`);
   }
@@ -100,10 +90,14 @@ function setLanguage(lang) {
   fetch(`lang/${lang}.json`)
     .then(res => res.json())
     .then(data => {
-      // 1. Update text nodes, placeholders, and alts 
+      // 1. Update text nodes (SEMUA kecuali typed-text)
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
-        if (data[key]) el.textContent = data[key];
+        
+        // Hanya mengabaikan elemen typed-text dari pembaruan teks statis
+        if (data[key] && el.id !== "typed-text") { 
+            el.textContent = data[key];
+        }
       });
       document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
         const key = el.getAttribute("data-i18n-placeholder");
@@ -234,50 +228,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Fix Dropdown di Mobile agar tidak menutup Collapse
+
+// ✅ FIX FINAL DROPDOWN MOBILE/DESKTOP (Memaksa Bootstrap Bekerja)
 document.addEventListener("DOMContentLoaded", () => {
   const dropdownToggles = document.querySelectorAll('.navbar-nav .dropdown-toggle');
-  const bsCollapse = document.getElementById('navbarResponsive');
   const navbarToggler = document.body.querySelector('.navbar-toggler');
+  const bsCollapse = document.getElementById('navbarResponsive');
 
-  // Toggle dropdown di mobile
   dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', function (e) {
-      if (window.innerWidth < 992) {
-        // ✅ 1. KUNCI: Mencegah default link action dan event bubbling.
-        e.preventDefault();
+      // Hanya terapkan logic ini di mode mobile (navbarToggler terlihat)
+      if (window.getComputedStyle(navbarToggler).display !== 'none') {
+        
+        // 1. Cegah event klik naik ke atas collapse dan menutupnya.
+        // Biarkan Bootstrap menangani pembukaan dropdown karena kita sudah mengembalikan data-bs-toggle
         e.stopPropagation(); 
         
-        let dropdownMenu = this.nextElementSibling;
-        
-        // Cek status dropdown yang sedang diklik
-        const isCurrentlyOpen = dropdownMenu.classList.contains('show');
-
-        // 2. Tutup SEMUA dropdown yang sedang terbuka.
-        document.querySelectorAll('.navbar-nav .dropdown-menu.show').forEach(menu => {
-          menu.classList.remove('show');
-        });
-
-        // 3. Jika dropdown ini sebelumnya tertutup, BUKA sekarang.
-        if (!isCurrentlyOpen) {
-            dropdownMenu.classList.add('show');
-        }
+        // 2. Klik pada item submenu tetap menutup collapse
+        // Logika ini sudah ditangani di Step 3 (klik pada dropdown-item)
       }
     });
   });
 
-  // Klik submenu item → tutup hamburger collapse
+  // 3. Klik submenu item → tutup hamburger collapse
   document.querySelectorAll('.navbar-nav .dropdown-menu .dropdown-item').forEach(item => {
     item.addEventListener('click', () => {
-      // Pastikan hanya di mode mobile/tablet dan collapse sedang terbuka
       if (window.getComputedStyle(navbarToggler).display !== 'none' && bsCollapse.classList.contains('show')) {
         // Gunakan metode .hide() untuk menutup Bootstrap Collapse
-        // Ini memastikan menu tertutup setelah navigasi submenu.
         new bootstrap.Collapse(bsCollapse).hide();
       }
     });
   });
 });
+
 
 // Counter animation on scroll
 document.addEventListener("DOMContentLoaded", () => {

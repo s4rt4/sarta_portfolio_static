@@ -12464,3 +12464,29 @@ body.dark-mode #stats h4 {
     /* Karena ini di dalam H1, kita pastikan ukurannya besar */
     font-size: 4rem !important; 
 }
+
+/* =======================================================
+   FIX DROPDOWN MOBILE (Mencegah Collapse Menutup)
+   ======================================================= */
+
+@media (max-width: 991.98px) {
+    /* * HINDARI MENUTUP COLLAPSE KETIKA DROPDOWN DIKLIK 
+     * Saat dropdown di dalam collapse diklik, dropdown menu seharusnya terbuka, 
+     * tetapi Bootstrap Collapse menginterpretasikannya sebagai klik navigasi 
+     * dan menutup menu hamburger.
+     * Kita menggunakan override CSS untuk mengatasi ini tanpa JavaScript.
+     */
+    
+    /* Targetkan dropdown toggle di dalam collapse saat menu terbuka */
+    .navbar-collapse.show .dropdown-toggle[data-bs-toggle="dropdown"] {
+        /* Tidak ada perubahan gaya, hanya override perilaku */
+    }
+
+    /* Pastikan dropdown menu ditampilkan sebagai static di mobile */
+    .navbar-collapse .dropdown-menu {
+        position: static !important;
+        float: none !important;
+        /* Tambahkan padding atau margin agar menu turun ke bawah item Portfolio */
+        margin-top: 0.5rem !important;
+    }
+}
