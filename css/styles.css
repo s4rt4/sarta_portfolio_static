@@ -10739,6 +10739,19 @@ hr.divider {
   opacity: 1;
   border: none;
   transition: max-width 0.4s ease-in-out, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Larger invisible hover area for easier interaction */
+hr.divider::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  background: transparent;
 }
 
 hr.divider:hover {
@@ -10751,6 +10764,7 @@ hr.divider-light {
 }
 
 hr.divider-light:hover {
+  max-width: 6rem;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
@@ -12127,32 +12141,6 @@ body.dark-mode #stats h4 {
   color: #ddd;
 }
 
-/* -----------------------------
-   Divider - Hover Animation
-   ----------------------------- */
-hr.divider {
-  height: 0.2rem;
-  max-width: 3.25rem;
-  margin: 1.5rem auto;
-  background-color: #f4623a;
-  opacity: 1;
-  border: none;
-  transition: max-width 0.4s ease-in-out, box-shadow 0.3s ease;
-}
-
-hr.divider:hover {
-  max-width: 6rem;
-  box-shadow: 0 0 10px rgba(244, 98, 58, 0.5);
-}
-
-hr.divider-light {
-  background-color: #fff;
-}
-
-hr.divider-light:hover {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
 /* Dark mode divider - ONLY orange, no white */
 body.dark-mode hr.divider {
   background-color: #f4623a !important;
@@ -12164,16 +12152,8 @@ body.dark-mode hr.divider-light {
 
 body.dark-mode hr.divider:hover,
 body.dark-mode hr.divider-light:hover {
+  max-width: 6rem;
   box-shadow: 0 0 10px rgba(244, 98, 58, 0.5);
-}
-
-/* Remove any pseudo-element that might cause double lines */
-body.dark-mode hr.divider::before,
-body.dark-mode hr.divider::after,
-body.dark-mode hr.divider-light::before,
-body.dark-mode hr.divider-light::after {
-  display: none !important;
-  content: none !important;
 }
 
 /* Ensure no border creates double line effect */
