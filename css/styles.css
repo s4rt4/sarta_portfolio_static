@@ -10737,10 +10737,21 @@ hr.divider {
   margin: 1.5rem auto;
   background-color: #f4623a;
   opacity: 1;
+  border: none;
+  transition: max-width 0.4s ease-in-out, box-shadow 0.3s ease;
+}
+
+hr.divider:hover {
+  max-width: 6rem;
+  box-shadow: 0 0 10px rgba(244, 98, 58, 0.5);
 }
 
 hr.divider-light {
   background-color: #fff;
+}
+
+hr.divider-light:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 #mainNav {
@@ -11290,7 +11301,9 @@ body.dark-mode .btn {
 }
 
 body.dark-mode .divider-light {
-  border-top-color: #f4623a !important; /* biar tetap oranye */
+  border-top: none !important;
+  border: none !important;
+  background-color: #f4623a !important;
 }
 
 /* NAVBAR TEXT FIX */
@@ -11984,4 +11997,200 @@ body.dark-mode #stats h4 {
         /* Tambahkan padding atau margin agar menu turun ke bawah item Portfolio */
         margin-top: 0.5rem !important;
     }
+}
+/* =======================================================
+   FIXES - Restored Missing Styles
+   ======================================================= */
+
+/* -----------------------------
+   Logo Icon - Circular Border
+   ----------------------------- */
+.logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 18px;
+  color: #000;
+  background-color: transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.logo-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode logo icon */
+body.dark-mode .logo-icon {
+  border: 2px solid #f4623a !important;
+  color: #f4623a !important;
+  background-color: rgba(244, 98, 58, 0.1) !important;
+}
+
+body.dark-mode .logo-icon:hover {
+  box-shadow: 0 0 10px rgba(244, 98, 58, 0.6);
+}
+
+/* -----------------------------
+   Tool Items - Small Cards
+   ----------------------------- */
+.tool-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  min-width: 80px;
+}
+
+.tool-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.tool-item img {
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: contain;
+  border: none !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  transition: transform 0.25s ease;
+}
+
+.tool-item img:hover {
+  transform: scale(1.1);
+  box-shadow: none;
+}
+
+.tool-item p {
+  font-size: 0.75rem !important;
+  margin-bottom: 0;
+}
+
+/* -----------------------------
+   Stats Section - Counter Boxes
+   ----------------------------- */
+#stats {
+  padding: 80px 0;
+}
+
+#stats .counter-box {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 30px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  color: #000;
+}
+
+#stats .counter-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+#stats .counter {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f4623a;
+  margin-bottom: 10px;
+}
+
+#stats h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Dark mode stats */
+body.dark-mode #stats {
+  background-color: #111;
+}
+
+body.dark-mode #stats .counter-box {
+  background: #1e1e1e;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+body.dark-mode #stats .counter {
+  color: #f4623a;
+}
+
+body.dark-mode #stats h4 {
+  color: #ddd;
+}
+
+/* -----------------------------
+   Divider - Hover Animation
+   ----------------------------- */
+hr.divider {
+  height: 0.2rem;
+  max-width: 3.25rem;
+  margin: 1.5rem auto;
+  background-color: #f4623a;
+  opacity: 1;
+  border: none;
+  transition: max-width 0.4s ease-in-out, box-shadow 0.3s ease;
+}
+
+hr.divider:hover {
+  max-width: 6rem;
+  box-shadow: 0 0 10px rgba(244, 98, 58, 0.5);
+}
+
+hr.divider-light {
+  background-color: #fff;
+}
+
+hr.divider-light:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Dark mode divider - ONLY orange, no white */
+body.dark-mode hr.divider {
+  background-color: #f4623a !important;
+}
+
+body.dark-mode hr.divider-light {
+  background-color: #f4623a !important;
+}
+
+body.dark-mode hr.divider:hover,
+body.dark-mode hr.divider-light:hover {
+  box-shadow: 0 0 10px rgba(244, 98, 58, 0.5);
+}
+
+/* Remove any pseudo-element that might cause double lines */
+body.dark-mode hr.divider::before,
+body.dark-mode hr.divider::after,
+body.dark-mode hr.divider-light::before,
+body.dark-mode hr.divider-light::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Ensure no border creates double line effect */
+body.dark-mode hr.divider,
+body.dark-mode hr.divider-light {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* -----------------------------
+   About Section Divider Fix
+   ----------------------------- */
+#about hr.divider-light {
+  background-color: #fff;
+}
+
+body.dark-mode #about hr.divider-light {
+  background-color: #f4623a !important;
 }
